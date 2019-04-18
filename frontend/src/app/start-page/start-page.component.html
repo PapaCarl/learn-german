@@ -1,0 +1,61 @@
+<header>
+  <figure class="logo-1">
+    <img src="../../assets/logo_1.png" alt="logo_1">
+  </figure>
+  <div class="page-header">
+    <span class="first-word">Deutsch</span>
+    <span class="second-word">mit</span>
+    <span class="third-word">Matilda</span>
+  </div>
+  <figure class="matilda-base">
+    <img src="../../assets/matilda_shy.png" alt="matilda">
+  </figure>
+  <div class="private-room">
+    <img src="../../assets/private.png" alt="enter into private room">
+  </div>
+  <div class="authorization">
+    <button class="registration-button">Зарегистрируйтесь сейчас</button>
+    <span class="span-link">через</span>
+    <div class="social-button">
+      <img src="../../assets/facebook.png" alt="facebook" class="facebook-icon">
+      <img src="../../assets/gplus.png" alt="google plus" class="google-plus-icon">
+      <img src="../../assets/ok.png" alt="ok" class="ok-icon">
+      <img src="../../assets/vk.png" alt="vk" class="vk-icon">
+    </div>
+    <div class="motivation-1">
+      <span>Зарегистрируйтесь и следите за своим прогрессом!</span>
+    </div>
+  </div>
+</header>
+<main>
+  <figure class="logo-sight-1">
+    <img src="../../assets/keln_dom.JPG" alt="keln_dom">
+  </figure>
+  <div class="lessons">
+    <h1>ОНЛАЙН-УРОКИ</h1>
+    <h2>немецкий с нуля</h2>
+    <ul>
+      <li>
+        <span>Вводный урок</span>
+      </li>
+      <li *ngFor="let lesson of lessons">
+        <span>Урок</span>
+        <span>{{lesson.number}}</span>
+        <span>{{lesson.name}}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="logo-sight-2">
+  </div>
+  <div class="trainer">
+    <h1>ОНЛАЙН-ТРЕНАЖЕР</h1>
+    <h2>учим играя</h2>
+    <ul>
+      <li>ЛЕКСИКА</li>
+      <li>ГРАММАТИКА</li>
+      <li>АУДИРОВАНИЕ</li>
+      <li>ПИСЬМО</li>
+      <li>ЧТЕНИЕ</li>
+    </ul>
+  </div>
+</main>
