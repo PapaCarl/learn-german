@@ -13,11 +13,11 @@ export class StartPageComponent implements OnInit {
   ngOnInit() {
     for (let i = 0; i < 21; i++) {
       if (i === 0) {
-        this.lessons.push({id: i+1, number: i+1, name: 'Знакомство'})
+        this.lessons.push({id: i+1, number: i+1, name: 'Знакомство с самим собой'})
+      } else {
+        this.lessons.push({id: i+1, number: i+1, name: ''})
       }
-      this.lessons.push({id: i+1, number: i+1, name: ''})
     }
-    console.log(this.lessons);
   }
 
 }
