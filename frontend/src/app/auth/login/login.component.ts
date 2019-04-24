@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {UsersService} from "../../shared/core-services/users.service";
+import {ApiService} from "../../shared/core-services/api.service";
 
 @Component({
   selector: 'lde-login',
@@ -10,7 +12,10 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor() { }
+  constructor(
+    private userService: UsersService,
+    private api: ApiService
+  ) { }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -20,6 +25,10 @@ export class LoginComponent implements OnInit {
   }
 
   public onSubmit() {
-    console.log(this.form);
+    console.log(this.form.value.email);
+    const formData = this.form.value;
+    this.api.getUserByEmail(formData.email).subscribe(item => {
+      console.log(item);
+    })
   }
 }

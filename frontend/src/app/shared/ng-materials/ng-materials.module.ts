@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgMaterialsComponent } from './ng-materials.component';
-import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule} from "@angular/material";
+import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatRadioModule} from "@angular/material";
 import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
@@ -12,13 +12,15 @@ import {ReactiveFormsModule} from "@angular/forms";
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    MatRadioModule
   ],
   exports: [
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    MatRadioModule
 
   ]
 })
