@@ -43,4 +43,6 @@
     Don't have an account?
     <a routerLink="/auth/registration">Sign up</a>
   </p>
+
+  <lde-notification *ngIf="error.isShow">{{error.message}}</lde-notification>
 </form>

@@ -1,19 +1,30 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {User} from "../models/user.model";
-import {parseHttpResponse} from "selenium-webdriver/http";
-import {map} from "rxjs/operators";
+import {Observable, throwError} from "rxjs";
+import {catchError, map} from "rxjs/operators";
+import {ApiService} from "./api.service";
+import {error} from "@angular/compiler/src/util";
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private api: ApiService) { }
 
-  getUserByEmail(email: string): Observable<any> {
-    console.log(email);
-    return this.httpClient.get(`http://localhost:3000/users?email=${email}`)
+  validateUserByEmail(email: string, password: string): Observable<any> {
+   return this.api.getUserByEmail(email).pipe(
+     map(user => {
+     if(user.password === password) {
+       return true;
+     } else {
+       throw new Error('you sent an incorrect password')
+     }
+    }),
+     catchError(error => {
+       return throwError(error)
+     })
+   )
   }
+
 }
