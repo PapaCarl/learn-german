@@ -1,172 +1,200 @@
-header {
+@import '../../styles/styles-variables';
+
+:host {
+  height: 100vh;
   width: 100%;
-  display: flex;
-  justify-content: space-around;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  background: #FFED98;
-  border-bottom: 10px solid #207F60;
+  background-color: #A6C766;
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: @background-color-green;
+    border-bottom: 10px solid #207F60;
 
-  .logo-1 {
-    width: 200px;
-    height: 200px;
-    align-self: center;
-    img {
-      transform: rotate(15deg);
-      border-radius: 40px 0 40px 0;
-      box-shadow: 0 0 40px rgba(3, 0, 0, 0.5);
-    }
-  }
-  .page-header {
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    span {
-      font-size: 60px;
-      font-weight: bolder;
-      letter-spacing: 4px;
-      text-shadow: 2px 0 5px #4d7c0e, -2px 0 1px #4d7c0e;
-      color: #4d7c0e;
-      &.first-word {
-        align-self: flex-start;
-      }
-      &.second-word {
-        align-self: center;
-      }
-      &.third-word {
-        align-self: flex-end;
-      }
-    }
-  }
-  .matilda-base {
-    width: 200px;
-    height: 200px;
-  }
-  .private-room {
-    width: 150px;
-    height: 150px;
-    align-self: baseline;
-  }
-  .authorization {
-    width: 250px;
-    display: flex;
-    flex-direction: column;
-    .span-link {
+    .logo-1 {
       align-self: center;
-      font-size: 30px;
-      color: #8AB32D;
-    }
-    .registration-button {
-      padding: 3px 10px;
-      background: #4d7c0e;
-      color: #fff;
-      font-size: 17px;
-      font-weight: bold;
-    }
-    .social-button {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 5px;
-
       img {
-        width: 50px;
-        height: 50px;
+        width: 200px;
+        height: 200px;
+        transform: rotate(15deg);
+        border-radius: 40px 0 40px 0;
+        box-shadow: 0 0 40px rgba(3, 0, 0, 0.5);
       }
     }
-    .motivation-1 {
-      font-style: italic;
-      font-size: 17px;
-      font-weight: bold;
-      color: #8AB32D;
-      text-align: center;
-      margin-top: 15px;
-    }
-  }
-}
-main {
-  padding-left: 40px;
-  height: 750px;
-  background: #8AB32D;
-  padding-top: 40px;
-  display: flex;
-  justify-content: space-between;
-  padding-right: 50px;
-  //background-image: url('../../assets/brandenburg_gate.jpg');
-  //background-color: #92D150;
-  //background-size: 80%;
-  //background-repeat: no-repeat;
-  //background-position: bottom;
-  .logo-sight-1 {
-    height: 627px;
-    width: 400px;
-    transform: rotate(-5deg);
-    img {
-      border: 15px solid #fff;
-      border-radius:  80px 0 80px 0;
-    }
-
-  }
-  .lessons {
-    color: #FFED98;
-    h1 {
-      font-size: 37px;
-      text-align: center;
-    }
-    h2 {
-      font-size: 25px;
-      text-align: center;
-    }
-    ul {
-      margin-top: 25px;
-      li {
-        list-style: none;
-        font-size: 25px;
-        font-style: oblique;
-        font-weight: bold;
-        span {
-          margin-left: 5px;
+    .page-header {
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      span {
+        font-size: 60px;
+        font-weight: bolder;
+        letter-spacing: 4px;
+        text-shadow: 2px 0 5px @accent-color-red-soft, -2px 0 1px @accent-color-red-soft;
+        color: @accent-color-red-soft;
+        &.first-word {
+          align-self: flex-start;
+        }
+        &.second-word {
+          align-self: center;
+        }
+        &.third-word {
+          align-self: flex-end;
         }
       }
     }
-
-
-
-  }
-  .trainer {
-    color: #FFED98;
-    h1 {
-      font-size: 37px;
-      text-align: center;
+    .matilda-base {
+      width: 200px;
+      height: 200px;
     }
-    h2 {
-      font-size: 25px;
-      text-align: center;
-    }
-    ul {
-      margin-top: 25px;
-      li {
-        list-style: none;
-        font-size: 35px;
-        border: 3px solid #FFED98;
-        border-radius: 10px 10px;
-        padding: 10px 30px;
-        margin-bottom: 30px;
-        font-weight: bold;
-        text-align: center;
+    .private-room {
+      width: 150px;
+      height: 150px;
+      align-self: baseline;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
       }
     }
+    .authorization {
+      width: 250px;
+      display: flex;
+      flex-direction: column;
+      .span-link {
+        align-self: center;
+        font-size: 30px;
+        color: @accent-color-red-soft;
+      }
+      .registration-button {
+        padding: 3px 10px;
+        background: #4d7c0e;
+        color: #fff;
+        font-size: 17px;
+        font-weight: bold;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+      .social-button {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 5px;
 
+        img {
+          width: 50px;
+          height: 50px;
+          cursor: pointer;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+      .motivation-1 {
+        font-style: italic;
+        font-size: 17px;
+        font-weight: bold;
+        color: @accent-color-red-soft;
+        text-align: center;
+        margin-top: 15px;
+      }
+    }
   }
-  //.logo-sight-2 {
-  //  width: 400px;
-  //  height: 250px;
-  //  background-image: url("../../assets/brandenburg_gate.jpg");
-  //  background-size: cover;
-  //}
+  main {
+    padding-left: 40px;
+    background: @background-color-green-light;
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 50px;
+    flex-wrap: wrap;
+
+    .logo-sight-1 {
+      height: 556px;
+      width: 400px;
+      transform: rotate(-5deg);
+      border: 15px solid #fff;
+      border-radius:  80px 0 80px 0;
+      margin: 10px 20px;
+      opacity: 0.8;
+    }
+    .lessons {
+      width: 400px;
+      max-height: 600px;
+      color: @accent-color-red-soft;
+      position: relative;
+      //color: #FFED98;
+      flex-grow: 1;
+      margin: 10px 20px;
+      border-radius: 10px;
+      border: 3px solid @color-deep-purple;
+      h1 {
+        font-size: 37px;
+        text-align: center;
+        margin-top: 10px;
+      }
+      h2 {
+        font-size: 25px;
+        text-align: center;
+      }
+      ul {
+        margin-top: 25px;
+        margin-right: 10px;
+        margin-left: 10px;
+        li {
+          list-style: none;
+          font-size: 25px;
+          font-style: oblique;
+          font-weight: bold;
+          cursor: pointer;
+          margin-top: 5px;
+          &:hover {
+            opacity: 0.8;
+          }
+          span {
+            margin-left: 5px;
+          }
+        }
+      }
+
+
+
+    }
+    .trainer {
+      width: 400px;
+      height: 600px;
+      color: @accent-color-red-soft;
+      margin: 10px 20px;
+      h1 {
+        font-size: 37px;
+        text-align: center;
+      }
+      h2 {
+        font-size: 25px;
+        text-align: center;
+      }
+      ul {
+        margin-top: 25px;
+        li {
+          list-style: none;
+          font-size: 35px;
+          border: 3px solid @color-deep-purple;
+          border-radius: 10px 10px;
+          padding: 10px 30px;
+          margin-bottom: 30px;
+          font-weight: bold;
+          text-align: center;
+          cursor: pointer;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
 }
-img {
-  width: 100%;
-  height: 100%;
-}
+
+
 
 

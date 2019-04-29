@@ -9,6 +9,7 @@ import {SystemModule} from "./system/system.module";
 import {SystemRoutingModule} from "./system/system-routing.module";
 import {StartPageModule} from "./start-page/start-page.module";
 import {StartPageRoutingModule} from "./start-page/start-page-routing.module";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {StartPageRoutingModule} from "./start-page/start-page-routing.module";
     SystemModule,
     SystemRoutingModule,
     StartPageModule,
-    StartPageRoutingModule
+    StartPageRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

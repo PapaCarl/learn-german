@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {UsersService} from "../../shared/core-services/users.service";
 
 @Component({
   selector: 'lde-login',
@@ -9,8 +10,12 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 export class LoginComponent implements OnInit {
 
   form: FormGroup;
+  error: { isShow: boolean, message: string } = {isShow: false, message: ''};
 
-  constructor() { }
+  constructor(
+    private userService: UsersService,
+  ) {
+  }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -20,6 +25,19 @@ export class LoginComponent implements OnInit {
   }
 
   public onSubmit() {
-    console.log(this.form);
+    const formData = this.form.value;
+    this.userService.validateUserByEmail(formData.email, formData.password).subscribe(response => {
+        console.log(response);
+      },
+      error => {
+        this.error = {isShow: true, message: error.message};
+        this.clearError();
+      })
+  }
+
+  private clearError() {
+    setTimeout(() => {
+      this.error = {isShow: false, message: ''}
+    }, 3000)
   }
 }

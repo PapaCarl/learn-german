@@ -8,13 +8,13 @@
     <span class="third-word">Matilda</span>
   </div>
   <figure class="matilda-base">
-    <img src="../../assets/matilda_shy.png" alt="matilda">
+    <img class="matilda-base" src="../../assets/matilda_base.png" alt="matilda">
   </figure>
-  <div class="private-room">
-    <img src="../../assets/private.png" alt="enter into private room">
+  <div >
+    <img routerLink="/auth/login" class="private-room" src="../../assets/private.png" alt="enter into private room">
   </div>
   <div class="authorization">
-    <button class="registration-button">Зарегистрируйтесь сейчас</button>
+    <button mat-stroked-button class="registration-button" routerLink="/auth/registration">Зарегистрируйтесь сейчас</button>
     <span class="span-link">через</span>
     <div class="social-button">
       <img src="../../assets/facebook.png" alt="facebook" class="facebook-icon">
@@ -28,23 +28,27 @@
   </div>
 </header>
 <main>
-  <figure class="logo-sight-1">
-    <img src="../../assets/keln_dom.JPG" alt="keln_dom">
+  <figure>
+    <img class="logo-sight-1" src="../../assets/keln_dom.JPG" alt="keln_dom">
   </figure>
-  <div class="lessons">
-    <h1>ОНЛАЙН-УРОКИ</h1>
-    <h2>немецкий с нуля</h2>
-    <ul>
-      <li>
-        <span>Вводный урок</span>
-      </li>
-      <li *ngFor="let lesson of lessons">
-        <span>Урок</span>
-        <span>{{lesson.number}}</span>
-        <span>{{lesson.name}}</span>
-      </li>
-    </ul>
-  </div>
+
+    <div class="lessons">
+      <perfect-scrollbar [config]="{suppressScrollX: true}">
+      <h1>ОНЛАЙН-УРОКИ</h1>
+      <h2>немецкий с нуля</h2>
+      <ul>
+        <li>
+          <span>Вводный урок</span>
+        </li>
+        <li *ngFor="let lesson of lessons">
+          <span>Урок</span>
+          <span>#{{lesson.number}}</span>
+          <span>{{lesson.name}}</span>
+        </li>
+      </ul>
+  </perfect-scrollbar>
+    </div>
+
   <div class="logo-sight-2">
   </div>
   <div class="trainer">
