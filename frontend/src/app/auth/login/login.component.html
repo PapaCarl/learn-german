@@ -1,33 +1,33 @@
-<h1 class="sign-in-header">Sign in</h1>
+<h1 class="sign-in-header">Авторизация</h1>
 <form class="sign-in-form-group" [formGroup]="form" (ngSubmit)="onSubmit()">
 
 
   <mat-form-field appearance="outline"
                   [ngClass]="{'has-error': form.get('email').invalid && form.get('email').touched}">
-    <mat-label>E-mail</mat-label>
+    <mat-label>Почта</mat-label>
     <input matInput
            type="text"
-           placeholder="enter your email"
+           placeholder="Введите свой адрес електронной почты"
            formControlName="email">
     <mat-hint *ngIf="form.get('email').invalid && form.get('email').touched">
-      <span *ngIf="form.get('email')['errors']['required']">Email can not be empty!</span>
-      <span *ngIf="form.get('email')['errors']['email']">Enter correct email!</span>
+      <span *ngIf="form.get('email')['errors']['required']">Адрес електронной почты не может быть пустым </span>
+      <span *ngIf="form.get('email')['errors']['email']">ВВедите коректный адрес електронной почты!</span>
     </mat-hint>
   </mat-form-field>
 
 
   <mat-form-field appearance="outline"
                   [ngClass]="{'has-error': form.get('password').invalid && form.get('password').touched}">
-    <mat-label>Password</mat-label>
+    <mat-label>Пароль</mat-label>
     <input matInput
            type="password"
-           placeholder="Password"
+           placeholder="Введите свой пароль"
            formControlName="password">
     <mat-hint class="form-help-text" *ngIf="form.get('password').invalid && form.get('password').touched">
-      <span *ngIf="form.get('password')['errors']['required']">Password can not be empty!</span>
+      <span *ngIf="form.get('password')['errors']['required']">Пароль не может быть пустым!</span>
       <span *ngIf="form.get('password')['errors']['minlength']">
-        Enter password must be more longer than {{form.get('password')['errors']['minlength']['requiredLength']}} chars!
-        Now {{form.get('password')['errors']['minlength']['actualLength']}}.
+        Ввведеный пароль должен быть не менее {{form.get('password')['errors']['minlength']['requiredLength']}} символов!
+        Сейчас {{form.get('password')['errors']['minlength']['actualLength']}}.
       </span>
     </mat-hint>
   </mat-form-field>
@@ -36,12 +36,12 @@
           type="submit"
           class="btn-submit"
           [disabled]="form.invalid">
-    Enter
+    Проверить
   </button>
 
   <p class="invitation-to-registration">
-    Don't have an account?
-    <a routerLink="/auth/registration">Sign up</a>
+    У Вас нет еще своего аакаунта?
+    <a routerLink="/auth/registration">Зарегистрироваться</a>
   </p>
 
   <lde-notification *ngIf="error.isShow">{{error.message}}</lde-notification>

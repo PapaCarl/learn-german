@@ -6,7 +6,7 @@ import {TrainersComponent} from "./trainers/trainers.component";
 
 const routes: Routes = [
   {
-    path: 'system', component: SystemComponent, children: [
+    path: '', component: SystemComponent, children: [
       {path: 'lessons', component: LessonsComponent},
       {path: 'trainers', component: TrainersComponent}
     ]

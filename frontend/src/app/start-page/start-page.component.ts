@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LessonsService} from "../shared/core-services/lessons.service";
 
 @Component({
   selector: 'lde-start-page',
@@ -8,16 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class StartPageComponent implements OnInit {
 
   lessons: Array<any> = [];
-  constructor() { }
+  constructor(
+    private lessonsService: LessonsService
+  ) { }
 
   ngOnInit() {
-    for (let i = 0; i < 21; i++) {
-      if (i === 0) {
-        this.lessons.push({id: i+1, number: i+1, name: 'Знакомство с самим собой'})
-      } else {
-        this.lessons.push({id: i+1, number: i+1, name: ''})
-      }
-    }
+    this.lessonsService.getLessons().subscribe(lessons => {
+      this.lessons = lessons;
+    })
   }
 
 }

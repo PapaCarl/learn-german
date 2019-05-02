@@ -28,26 +28,32 @@
   </div>
 </header>
 <main>
-  <figure>
-    <img class="logo-sight-1" src="../../assets/keln_dom.JPG" alt="keln_dom">
-  </figure>
-
-    <div class="lessons">
-      <perfect-scrollbar [config]="{suppressScrollX: true}">
-      <h1>ОНЛАЙН-УРОКИ</h1>
+  <div class="lessons">
+    <perfect-scrollbar [config]="{suppressScrollX: true}">
+      <h1 routerLink="/lessons" class="lessons-header">ОНЛАЙН-УРОКИ</h1>
       <h2>немецкий с нуля</h2>
       <ul>
-        <li>
-          <span>Вводный урок</span>
-        </li>
         <li *ngFor="let lesson of lessons">
           <span>Урок</span>
           <span>#{{lesson.number}}</span>
           <span>{{lesson.name}}</span>
         </li>
       </ul>
-  </perfect-scrollbar>
-    </div>
+    </perfect-scrollbar>
+  </div>
+
+  <div class="stickers">
+    <perfect-scrollbar [config]="{suppressScrollX: true}">
+      <h1>СТИКЕРЫ</h1>
+      <ul>
+        <li *ngFor="let sticker of stickers">
+          <span>Дата</span>
+          <span>Важность</span>
+          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto aut deserunt dignissimos</span>
+        </li>
+      </ul>
+    </perfect-scrollbar>
+  </div>
 
   <div class="logo-sight-2">
   </div>
